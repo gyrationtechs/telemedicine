@@ -14,7 +14,7 @@ class Doctor(models.Model):
 
 
 class Patient(models.Model):
-    person = models.ForeignKey(User, on_delete=models.CASCADE)
+    person = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     is_patient = models.BooleanField(default=True)
     appointment = models.ForeignKey(
         'Appointments', on_delete=models.CASCADE, related_name='my_appointments')
