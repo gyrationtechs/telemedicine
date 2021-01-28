@@ -10,7 +10,6 @@ from .models import Doctor, Patient, Appointments, OffDays
 class DoctorViewSet(viewsets.ModelViewSet):
     queryset = Doctor.objects.all()
     serializer_class = DoctorSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
 
 class PatientViewSet(viewsets.ModelViewSet):
