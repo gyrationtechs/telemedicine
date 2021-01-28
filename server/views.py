@@ -8,19 +8,20 @@ from .models import Doctor, Patient, Appointments, OffDays
 
 
 class DoctorViewSet(viewsets.ModelViewSet):
-    queryset = Doctor.objects.all().order_by('-date_joined')
+    queryset = Doctor.objects.all()
     serializer_class = DoctorSerializer
     permission_classes = [permissions.IsAuthenticated]
 
 
 class PatientViewSet(viewsets.ModelViewSet):
-    queryset = Patient.objects.all().order_by('-date_joined')
+    queryset = Patient.objects.all()
     serializer_class = PatientSerializer
 
 
 class AppointmentsViewSet(viewsets.ModelViewSet):
-    queryset = Appointments.objects.all().order_by('-date_joined')
+    queryset = Appointments.objects.all()
     serializer_class = AppointmentsSerializer
+
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
