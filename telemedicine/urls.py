@@ -22,10 +22,13 @@ from server import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+router.register(r'doctor', views.DoctorViewSet)
+router.register(r'patient', views.PatientViewSet)
+router.register(r'appointments', views.AppointmentsViewSet)
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
